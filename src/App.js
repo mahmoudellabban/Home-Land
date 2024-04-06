@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { HashRouter as Router } from "react-router-dom";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,6 +15,7 @@ const App = () => {
   };
   return (
     <div className="max-w-[1440px] mx-auto bg-white">
+      <Router>
       <Header />
       <ScrollToTop />
       <Routes>
@@ -21,6 +23,7 @@ const App = () => {
         <Route path="/property/:id" element={<PropertyDetails />} />
       </Routes>
       <Footer />
+      </Router>
     </div>
   );
 };
